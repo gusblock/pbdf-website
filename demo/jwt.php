@@ -7,7 +7,7 @@ $requests = [
     "18plus" => [
         [
             "label" => "Over 18",
-            "attributes" => ["pbdf.pbdf.ageLimits.over18"]
+            "attributes" => ["pbdf.pbdf.ageLimits.over18", "pbdf.nijmegen.ageLimits.over18"]
         ],
     ],
     "adres" => [
@@ -15,10 +15,6 @@ $requests = [
             "label" => "straat",
             "attributes" => ["pbdf.nijmegen.address.street", "pbdf.pbdf.idin.address"]
         ],
-	//[
-        //     "label" => "nummer",
-        //     "attributes" => ["pbdf.pbdf.idin", "pbdf.nijmegen.address.houseNumber"]
-        //],
         [
             "label" => "postcode",
             "attributes" => ["pbdf.nijmegen.address.zipcode", "pbdf.pbdf.idin.zipcode"]

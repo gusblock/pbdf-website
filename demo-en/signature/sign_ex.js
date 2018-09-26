@@ -33,6 +33,7 @@ $(function() {
                         'pbdf.pbdf.facebook.familyname',
                         'pbdf.pbdf.linkedin.familyname',
                         'pbdf.pbdf.twitter.fullname',
+                        'pbdf.nijmegen.personalData.fullname',
                     ],
                 },
                 {
@@ -135,6 +136,7 @@ $(function() {
             'pbdf.pbdf.facebook.familyname',
             'pbdf.pbdf.linkedin.familyname',
             'pbdf.pbdf.twitter.fullname',
+            'pbdf.nijmegen.personalData.fullname',
         ];
         console.log(options);
         for (var i=0; i<options.length; i++) {

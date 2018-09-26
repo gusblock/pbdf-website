@@ -3,10 +3,9 @@ $(function() {
         console.log("Authentication successful!");
         console.log("Authentication token:", data);
 	token = jwt_decode(data);
-	console.log(token.attributes);
-	var adres = token.attributes["pbdf.pbdf.idin.address"];
-	var postcode = token.attributes["pbdf.pbdf.idin.zipcode"];
-	var plaats = token.attributes["pbdf.pbdf.idin.city"];
+	var adres = token.attributes["pbdf.pbdf.idin.address"] || token.attributes["pbdf.nijmegen.address.street"];
+	var postcode = token.attributes["pbdf.pbdf.idin.zipcode"] || token.attributes["pbdf.nijmegen.address.zipcode"];
+	var plaats = token.attributes["pbdf.pbdf.idin.city"] || token.attributes["pbdf.nijmegen.address.city"];
 	document.getElementById("adres_regel").value = adres;
 	document.getElementById("postcode_regel").value = postcode;
 	document.getElementById("plaats_regel").value = plaats;
