@@ -4,3 +4,9 @@
 [submodule "schememanager/irma-demo"]
 	path = schememanager/irma-demo
 	url = https://github.com/privacybydesign/irma-demo-schememanager
+[submodule "demo/irmaTube"]
+	path = demo/irmaTube
+	url = https://github.com/privacybydesign/irmatube.git
+[submodule "demo-en/irmaTube"]
+	path = demo-en/irmaTube
+	url = https://github.com/privacybydesign/irmatube.git
