@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Email verificatie demo</title>
+        <meta value="https://privacybydesign.foundation/tomcat/irma_api_server/server/" name="irma-web-server">
+	<!-- foundation's server -->
+        <meta value="https://privacybydesign.foundation/tomcat/irma_api_server/api/v2/" name="irma-api-server">
+	<!-- demo server -->
+        <!-- <meta value="https://demo.irmacard.org/tomcat/irma_api_server/api/v2/" name="irma-api-server"> -->
+
+
+        <link rel="stylesheet" href="https://privacybydesign.foundation/tomcat/irma_api_server/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+
+        <script src="https://privacybydesign.foundation/tomcat/irma_api_server/bower_components/jquery/dist/jquery.js" defer></script>
+        <script src="https://privacybydesign.foundation/tomcat/irma_api_server/client/irma.js" defer></script>
+	<script type="text/javascript"
+		src="https://privacybydesign.foundation/tomcat/irma_api_server/bower_components/jwt-decode/build/jwt-decode.js"></script>
+        <script src="maildemo.js" defer></script>
+    </head>
+    <body>
+
+<div class="col-xs-10 col-md-6 col-xs-offset-1 col-md-offset-3" id="main">
+<h1>Demo: controle van e-mail adres met IRMA</h1>
+
+<div id="result_status"></div>
+
+<p>
+Deze pagina bevat een voorbeeld van een eenvoudige controle van een
+e-mail adres met IRMA. Tevens wordt enige uitleg gegeven over hoe dit
+werkt en hoe dit gebruikt kan worden, met name door organisaties met
+eigen e-mail adressen: zij kunnen de gebruikers van die adressen
+daarmee laten inloggen. Op die manier is geen apart wachtwoord nodig
+om in te loggen.
+</p>
+
+<p>
+De linker knop hieronder controleert of het getoonde e-mail adres
+een <tt>gmail.com</tt> adres is. Alleen wanneer dat het geval is de
+controle geslaagd. Eenzelfde mechanisme kan gebruikt worden om
+uitsluitend bezoekers met een e-mail adres van een andere organsiatie
+toe te laten.
+</p>
+
+<p>
+De rechter knop vraagt enkel een e-mail adres en toont dat op een
+volgende pagina. Dit kan bijvoorbeeld gevraagd worden aan bezoekers
+van een webpagina om zich met een e-mail adres te registreren.
+</p>
+
+<p>
+Om de onderstaande knoppen te kunnen uitproberen moet de bezoeker de
+IRMA
+app <a href="https://privacybydesign.foundation/download/">ge&iuml;nstalleerd</a>
+hebben. Daarin is dan typisch een e-mail adres opgenomen, namelijk het
+adres dat bij registratie is opgegeven.  Additionale e-mail adressen
+kunnen in de IRMA app toegevoegd worden via
+de <a href="https://privacybydesign.foundation/uitgifte/email/">e-mail
+uitgifte webpagina</a> van de stichting Privacy by Design.
+</p>
+
+<center style="margin: 2em">
+<tr><td>
+<button class="btn btn-primary" id="try_irma_gmailbtn">Check gmail adres</button>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;
+</td>
+<td>
+<button class="btn btn-primary" id="try_irma_emailbtn">Toon e-mail adres</button>
+</td>
+</tr>
+</center>
+
+<p>
+Een paar opmerkingen:
+<ul>
+<li> Geen enkele informatie over e-mail adressen wordt hier bewaard of
+verzameld. De getoonde e-mail addressen worden alleen gebruikt met
+deze demo als doel. Na het sluiten van deze pagina verdwijnen ze
+vanzelf.
+
+<li> De controle of the opgegeven adres daadwerkelijk een gmail adres
+is wordt hier uitgevoerd in javascript in de browser (client) van de
+gebruiker. Dat is niet de manier waarop het moet, maar kan in deze
+demo geen kwaad. De juiste wijze is om deze controle bij de server uit
+te voeren.
+</ul>
+</p>
+
+
+<p>
+<a href="https://privacybydesign.foundation/demo/">Terug</a> naar
+het IRMA demo overzicht.
+</p>
+
+</div>
+
+</body>
+</html>

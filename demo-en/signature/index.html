@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <title>IRMA Signing</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+        <meta value="https://privacybydesign.foundation/tomcat/irma_api_server/server/" name="irma-web-server">
+        <meta value="https://demo.irmacard.org/tomcat/irma_api_server/api/v2/" name="irma-api-server">
+
+        <link rel="stylesheet" href="https://privacybydesign.foundation/tomcat/irma_api_server/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="sign_ex.css"/>
+
+        <script src="https://privacybydesign.foundation/tomcat/irma_api_server/bower_components/jquery/dist/jquery.js" defer></script>
+        <script src="https://privacybydesign.foundation/tomcat/irma_api_server/client/irma.js" defer></script>
+        <script type="text/javascript" src="https://privacybydesign.foundation/tomcat/irma_api_server/bower_components/jwt-decode/build/jwt-decode.js" defer></script>
+        <script type="text/javascript" src="sign_ex_en.js" defer></script>
+        <script type="text/javascript" src="sign_ex.js" defer></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-8 col-lg-6 col-md-offset-2 col-lg-offset-3">
+                    <h2>Digital signatures with IRMA: some <em>sign-by-QR</em>
+                    examples</h2>
+                    <p>
+		      On this page you can try out some examples in
+		      which you can produce digital signatures
+		      yourself, with the attributes in your IRMA
+		      app. After pressing the buttons below, a signing
+		      request appears in your IRMA app. When you read
+		      this page on your phone, the switch to the IRMA
+		      app is made automatically. When you read this
+		      page on another device, you should first scan
+		      the the QR code that appears, using the IRMA app
+		      on your phone.
+                    </p>
+                    <p>
+		      None of these example leads to actual
+		      obligations. You can safely perform these
+		      signing acts. The example text that you sign
+		      does not commit you and the resulting signature
+		      is not stored.
+                    </p>
+                    <p>
+		      In order to be able to try out these examples
+		      you must have collected the relevant attributes
+		      in your IRMA app. This can be done via the
+		      IRMA <a href="https://privacybydesign.foundation/issuance/">issuance
+		      page</a>.
+                    </p>
+                    <ul class="nav nav-tabs">
+                      <li class="active"><a href="#email_consent" data-toggle="tab">Advertisement</a></li>
+                      <li><a href="#donation" data-toggle="tab">Donation</a></li>
+                      <li><a href="#exam" data-toggle="tab">Exam result</a></li>
+                    </ul>
+                    <div class="tab-content">
+                      <div id="email_consent" class="tab-pane panel panel-default active">
+                        <div class="panel-body">
+                          <p>
+                            <button id="btn_email_consent" class="btn btn-primary">Consent to receiving advertisements via email</button>
+                          </p>
+                          <p id="email_consent_result_status"></p>
+                          <p>
+			    Here you are asked to give GDPR-style
+			    consent so that advertisements can be sent
+			    to you. The attribute with which you sign
+			    this consent message is the email address
+			    at which you agree to receive the
+			    advertisements. No further attributes of
+			    yours are disclosed via this signature. In
+			    principle, more of your attributes could
+			    be included (like your gender, date of
+			    birth, etc) so that advertisements are
+			    more targeted.
+                          </p>
+                          <p>
+			    Giving permission via a digital signature
+			    is the perfect way to register consent
+			    under the General Data Protection
+			    Regulation (GDPR). This consent in the
+			    form of a digital signature can be
+			    transferred to other (partner)companies,
+			    giving them certainty, because they can
+			    check the signature themselves. Also,
+			    these signatures can be shown to the
+			    GDPR-regulator, upon request, in order to
+			    demonstrate that consent has actually been
+			    given by the owner of the email address.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div id="donation" class="tab-pane panel panel-default">
+                        <div class="panel-body">
+                          <p>
+                            <button id="btn_donation" class="btn btn-primary">Donate to the Privacy by Design foundation</button>
+                          </p>
+                          <div id="donation_result_status"></div>
+                          <p>
+			    Now you are asked to sign that you will
+			    contribute financially to the foundation
+			    (not really). You sign with your family
+			    name and with your mobile phone number
+			    attributes.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div id="exam" class="tab-pane panel panel-default">
+                        <div class="panel-body">
+                          <p>
+                            <button id="btn_exam" class="btn btn-primary">Declaration exam passed</button>
+                          </p>
+                          <div id="exam_result_status"></div>
+                          <p>
+			    Here you are asked to sign as teacher that
+			    a certain student has passed your exam. You
+			    sign with three SURF attributes, viz. your
+			    name, the (educational) institution where
+			    you work, and your email address at that
+			    institution.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p>
+		      Attribute-based digital signatures offer many
+		      new possibilities: a police officer, for
+		      instance, can sign a report with his/her name
+		      and police-registration number, as IRMA
+		      attributes; in this way the integrity and
+		      authenticity of this report is guaranteed in the
+		      whole criminal justice chain. Also, a medical
+		      doctor can sign a medical statement with his/her
+		      own medical credentials as IRMA attributes, so
+		      that everyone can verify that this statement is
+		      actually signed by a medical doctor (and also by
+		      whom). Within organisations all kinds of
+		      decisions can be registered reliably and
+		      verifiably with digital signatures. IRMA is the
+		      only identity platform that seamlessly combines
+		      both authentication and signing.
+                    </p>
+                    <p>
+                      <a href="https://privacybydesign.foundation/demo-en/">Back</a>
+                      to the IRMA demo page.
+                      </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,6 @@
+
+/* A bit of a hack, but it looks nice. */
+.panel.tab-pane {
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+}

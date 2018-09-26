@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Email verification demo</title>
+        <meta value="https://privacybydesign.foundation/tomcat/irma_api_server/server/" name="irma-web-server">
+	<!-- foundation's server -->
+        <meta value="https://privacybydesign.foundation/tomcat/irma_api_server/api/v2/" name="irma-api-server">
+	<!-- demo server -->
+        <!-- <meta value="https://demo.irmacard.org/tomcat/irma_api_server/api/v2/" name="irma-api-server"> -->
+
+
+        <link rel="stylesheet" href="https://privacybydesign.foundation/tomcat/irma_api_server/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+
+        <script src="https://privacybydesign.foundation/tomcat/irma_api_server/bower_components/jquery/dist/jquery.js" defer></script>
+        <script src="https://privacybydesign.foundation/tomcat/irma_api_server/client/irma.js" defer></script>
+	<script type="text/javascript"
+		src="https://privacybydesign.foundation/tomcat/irma_api_server/bower_components/jwt-decode/build/jwt-decode.js"></script>
+        <script src="maildemo.js" defer></script>
+    </head>
+    <body>
+
+<div class="col-xs-10 col-md-6 col-xs-offset-1 col-md-offset-3" id="main">
+<h1>Demo: verification of e-mail address with IRMA</h1>
+
+<div id="result_status"></div>
+
+<p>
+This page contains an example of a simple e-mail check with IRMA.  At
+the same time some explanation is given about how this works and how
+this can be used, especially by organisations with their own e-mail
+addresses: they can let users log in with these addresses. In this
+manner a separate password to log in is no longer needed.
+</p>
+
+<p>
+The left button below checks if the disclosed e-mail address is
+a <tt>gmail.com</tt> address. Only in that case the verification
+succeeds. The same mechanism can be used to provide exclusive access
+for visitors with e-mail addresses from other organisations.
+</p>
+
+<p>
+The button on the right asks for any e-mail address and displays
+it on the subsequent page. This can be used for visitors who
+are asked to register with an e-mail address.
+</p>
+
+<p>
+In order to be able to try out yourself the buttons below one needs to
+have the IRMA
+app <a href="https://privacybydesign.foundation/download-en/">installed</a>.
+After registration it typically contains at least one e-mail address.
+Additional e-mail addresses can be added via
+the <a href="https://privacybydesign.foundation/issuance/email">e-mail
+issuance webpage</a> of the Privacy by Design foundation. 
+</p>
+
+<center style="margin: 2em">
+<tr><td>
+<button class="btn btn-primary" id="try_irma_gmailbtn">Check gmail address</button>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;
+</td>
+<td>
+<button class="btn btn-primary" id="try_irma_emailbtn">Reveal e-mail address</button>
+</td>
+</tr>
+</center>
+
+<p>
+A few remarks:
+<ul>
+<li> No information about e-mail addresses is retained or collected
+via this webpage. The revealed e-mail addresses are only used for the
+purpose of this demo and disappear at the moment that the demo is
+closed.
+
+<li> The verification whether the disclosed address is actually
+a gmail address is performed in javascript in the browser (client)
+of the user. This is not the way this should be done properly,
+but this is harmless in the current demo. The appropriate way
+is to perform this check at the server's side.
+</ul>
+</p>
+
+
+<p>
+<a href="https://privacybydesign.foundation/demo-en/">Back</a> to
+the IRMA demo overview.
+</p>
+
+</div>
+
+</body>
+</html>

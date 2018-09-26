@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>18+ IRMA demo</title>
+        <meta value="https://privacybydesign.foundation/tomcat/irma_api_server/server/" name="irma-web-server">
+        <meta value="https://privacybydesign.foundation/tomcat/irma_api_server/api/v2/" name="irma-api-server">
+
+        <link rel="stylesheet" href="https://privacybydesign.foundation/tomcat/irma_api_server/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+
+        <script src="https://privacybydesign.foundation/tomcat/irma_api_server/bower_components/jquery/dist/jquery.js" defer></script>
+        <script src="https://privacybydesign.foundation/tomcat/irma_api_server/client/irma.js" defer></script>
+        <script src="18plusdemo.js" defer></script>
+    </head>
+    <body>
+
+<div class="col-xs-10 col-md-6 col-xs-offset-1 col-md-offset-3" id="main">
+<h1>Demo: leeftijdscontrole met IRMA</h1>
+
+<div id="result_status"></div>
+
+<p>
+Deze pagina bevat een voorbeeld van een eenvoudige leeftijdscheck met
+IRMA, samen met enige uitleg over hoe dit werkt en hoe dit gebruikt
+kan worden door bijvoorbeeld webwinkels of video sites. Met de
+onderstaande knop kan gecontroleerd worden of een bezoeker van zo'n
+webpagina daadwerkelijk ouder is dan 18. Het bijzondere aan IRMA is de
+privacy-vriendelijkheid: de bezoeker onthult geen enkele andere
+informatie dan het feit dat hij/zij 18+ is. Voor deze eigenschap
+"ouder dan 18" bestaat namelijk een speciaal IRMA attribuut; alleen de
+ja/nee informatie in dat attribuut wordt aan de webpagina getoond.
+</p>
+
+<p>
+Om de onderstaande knop te kunnen uitproberen moet de bezoeker de IRMA
+app <a href="https://privacybydesign.foundation/download/">ge&iuml;nstalleerd</a>
+hebben en daarin tenminste het <b>ouder dan 18</b> attribuut geladen
+hebben. Dat kan via
+de <a href="https://privacybydesign.foundation/uitgifte/idin/">iDIN
+uitgifte webpagina</a> van de stichting Privacy by Design. Succesvolle
+controle dat de bezoeker ouder dan 18 is geeft vervolgens toegang tot
+materiaal dat alleen voor de doelgroep "boven de 18" geschikt is.
+</p>
+
+<center style="margin: 2em">
+    <button class="btn btn-primary" id="try_irma_18btn">Ouder dan 18 check</button>
+</center>
+
+<p>
+Een paar opmerkingen:
+<ul>
+<li> Eenzelfde knop kan gebruikt worden voor andere leeftijdschecks,
+zoals "boven de 12", "boven de 16", of zelfs "boven de 65". Deze
+attributen kunnen in principe door iedere Nederlander verzameld worden
+in de eigen IRMA app, via
+de <a href="https://privacybydesign.foundation/uitgifte/">attribuut
+uitgifte</a> pagina.  De software voor het controleren van deze
+attributen, zoals ook hier gebruikt, is open source en gratis
+beschikbaar en kan ook kosteloos gebruikt worden, zie ook
+de <a href="https://privacybydesign.foundation/irma-controleur/">webpagina</a>
+van de stichting met meer informatie hierover.
+
+<li> Deze knop zou gebruikt kunnen worden door webwinkels die aan
+<a href="http://maxius.nl/wetboek-van-strafrecht/artikel240a">wettelijke
+eisen</a> moeten voldoen bij het aanbieden van bijvoorbeeld
+gewelddadige en/of aanstootgevende games of films. Ook zou met zo'n
+knop de toegang gereguleerd kunnen worden tot bepaalde TV programma's
+op uitzending-gemist sites. Tot nu toe wordt door de overheid veelal
+door de vingers gezien dat webwinkels geen echte leeftijdscontrole
+uitvoeren omdat er geen gebruiksvriendelijke (en goedkope) technologie
+beschikbaar is. Met IRMA gaat dat argument niet langer op.
+
+<li> Het is met IRMA in principe ook mogelijk om niet alleen "ouder
+dan" maar ook "jonger dan" attributen te gebruiken, zoals "jonger dan
+16" of "jonger dan 12". Daarmee kan toegang tot bepaalde webpagina's
+of chat sites tot jongeren beperkt worden --- en daarmee kunnen
+anderen in principe uitgesloten worden. Deze "jonger dan" attributen
+worden vooralsnog echter niet (door de stichting) uitgegeven,
+enerzijds omdat zich nog geen concrete toepassing aangediend heeft, en
+anderzijds omdat het onduidelijk is vanaf welke leeftijd het redelijk
+is dat kinderen de IRMA app gaan gebruiken.
+</ul>
+</p>
+
+<p>
+<a href="https://privacybydesign.foundation/demo/">Terug</a> naar
+het IRMA demo overzicht.
+</p>
+
+</div>
+
+</body>
+</html>

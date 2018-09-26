@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Student IRMA demo</title>
+        <meta value="https://privacybydesign.foundation/tomcat/irma_api_server/server/" name="irma-web-server">
+	<!-- foundation's server -->
+        <meta value="https://privacybydesign.foundation/tomcat/irma_api_server/api/v2/" name="irma-api-server">
+	<!-- demo server -->
+        <!-- <meta value="https://demo.irmacard.org/tomcat/irma_api_server/api/v2/" name="irma-api-server"> -->
+
+        <link rel="stylesheet" href="https://privacybydesign.foundation/tomcat/irma_api_server/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+
+        <script src="https://privacybydesign.foundation/tomcat/irma_api_server/bower_components/jquery/dist/jquery.js" defer></script>
+        <script src="https://privacybydesign.foundation/tomcat/irma_api_server/client/irma.js" defer></script>
+	<script type="text/javascript"
+		src="https://privacybydesign.foundation/tomcat/irma_api_server/bower_components/jwt-decode/build/jwt-decode.js"></script>
+        <script src="studentdemo.js" defer></script>
+    </head>
+    <body>
+
+<div class="col-xs-12 col-md-8 col-lg-6 col-md-offset-2 col-lg-offset-3" id="main">
+
+<h1>Demo: student verification with IRMA</h1>
+
+<div id="result_status"></div>
+
+<p>
+This page contains an example of using IRMA for verifying whether
+someone is a student or not. Additionally, the page explains how this
+works and how this can be used for instance by webshops that wish to
+give special offers to students. The first button below can be used to
+check if a visitor actually is a student. The special point of IRMA is
+its privacy-friendliness: the visitor discloses no other information
+than the mere fact that (s)he is a student. This "student" property
+exists as a special IRMA attribute; only the yes/no information in
+this attribute is revealed to the requesting webpage.
+</p>
+
+<p>
+Via the second button it is possible to request additional
+information, namely the role of the visitor (student or employee) and
+the name of the university (or educational institute) with which the
+student/employee is associated. In this way exclusive access can be
+organised for students and/or employees of a particular institute.
+</p>
+
+
+<p>
+In order to be able to try out yourself the buttons below one needs to
+have the IRMA
+app <a href="https://privacybydesign.foundation/download-en/">installed</a>
+with at least the <b>student</b> attribute loaded.  This can be done
+via <a href="https://privacybydesign.foundation/issuance/surfnet?action=login">SURFconext
+issuance webpage</a> of the Privacy by Design foundation. A succesful
+check that the visitor is a student gives access to special offers.
+</p>
+
+<center style="margin: 2em">
+<tr><td>
+<button class="btn btn-primary" id="try_irma_studentbtn">student check</button>
+</td>
+<td>
+&nbsp;&nbsp;&nbsp;
+</td>
+<td>
+<button class="btn btn-primary" id="try_irma_studentschoolbtn">disclose role en institute</button>
+</td>
+</tr>
+</center>
+
+
+<p>
+A few remarks:
+<ul>
+<li> There are several websites
+(like <a href="https://www.amazon.com/joinstudent">Amazon</a>) that
+offer discounts to students. How they actually check that someone is a
+student is not always clear. With IRMA this can now be done in an
+easy, reliable and privacy-friendly manner.
+
+<li> Via SURFconext email addresses are available too as IRMA
+attributes. They are not used in this demo in order to avoid
+identifying data.
+
+<li> At this stage this attribute issuance is available only for
+students and staff members of a limited number of institutions in
+higher eduction in the Netherlands. Are you studying or working at
+such an institution but does your institution not occur in the list at
+the <a href="https://privacybydesign.foundation/issuance/surfnet?action=login">SURFconext
+issuance page</a>? This means that your institution has not "switched
+on" the connection to the foundation Privacy by Design. In that case
+you cannot receive attributes via SURFconext. The best thing that you
+can do is to contact locally at your institution the people
+responsible for computer support (in particular: identity management)
+and ask them to send an email to the
+address <tt>support'at'surfconext.nl</tt>, with the simple request:
+Please give the Privacy by Design foundation access as Service
+Provider to our institution (in Dutch: <em>AUB de stichting Privacy by
+Design voor onze instelling toelaten als Service Provider</em>).
+</ul>
+</p>
+
+<p>
+<a href="https://privacybydesign.foundation/demo-en/">Back</a> to
+the IRMA demo overview.
+</p>
+
+</div>
+
+<div id="attribute_list"></div>
+
+<div id="attribute_list_data"></div>
+
+</body>
+</html>

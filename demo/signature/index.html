@@ -1,0 +1,167 @@
+<html>
+    <head>
+        <title>IRMA Ondertekening</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+        <meta value="https://privacybydesign.foundation/tomcat/irma_api_server/server/" name="irma-web-server">
+        <meta value="https://demo.irmacard.org/tomcat/irma_api_server/api/v2/" name="irma-api-server">
+
+        <link rel="stylesheet" href="https://privacybydesign.foundation/tomcat/irma_api_server/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="sign_ex.css"/>
+
+        <script src="https://privacybydesign.foundation/tomcat/irma_api_server/bower_components/jquery/dist/jquery.js" defer></script>
+        <script src="https://privacybydesign.foundation/tomcat/irma_api_server/client/irma.js" defer></script>
+        <script type="text/javascript" src="https://privacybydesign.foundation/tomcat/irma_api_server/bower_components/jwt-decode/build/jwt-decode.js" defer></script>
+        <script type="text/javascript" src="sign_ex_nl.js" defer></script>
+        <script type="text/javascript" src="sign_ex.js" defer></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-8 col-lg-6 col-md-offset-2 col-lg-offset-3">
+                    <h2>Digitale handtekeningen met IRMA: enkele <em>sign-by-QR</em> voorbeelden</h2>
+                    <p>
+                      Op deze pagina kunt u enkele voorbeelden
+                      uitproberen waarbij u zelf een digitale
+                      handtekening zet met eigen attributen in de IRMA
+                      app. Na het drukken op een van de onderstaande
+                      knoppen verschijnt een ondertekeningsverzoek in
+                      uw IRMA app. Wanneer u deze pagina op uw
+                      telefoon bekijkt, wordt automatisch
+                      overgeschakeld naar de IRMA app. Wanneer u deze
+                      pagina op een andere apparaat bekijkt moet u
+                      eerst de QR code die verschijnt met de IRMA app
+                      op uw telefoon scannen.
+                    </p>
+                    <p>
+                      Geen enkele van deze voorbeelden leidt tot
+                      daadwerkelijke verplichtingen. U kunt dus gerust
+                      de ondertekening geheel uitvoeren. De tekst die
+                      u ondertekent is niet verplichtend en wordt niet
+                      bewaard.
+                    </p>
+                    <p>
+                      Voor het succesvol uitproberen van deze
+                      voorbeelden is het vereist dat u de benodigde
+                      attributen reeds in uw IRMA app verzameld
+                      heeft. Dat kan via de
+                      IRMA <a href="https://privacybydesign.foundation/uitgifte/">uitgifte
+                      pagina</a>.
+                    </p>
+                    <ul class="nav nav-tabs">
+                      <li class="active"><a href="#email_consent" data-toggle="tab">Advertenties</a></li>
+                      <li><a href="#donation" data-toggle="tab">Donatie</a></li>
+                      <li><a href="#exam" data-toggle="tab">Tentamenresultaat</a></li>
+                    </ul>
+                    <div class="tab-content">
+                      <div id="email_consent" class="tab-pane panel panel-default active">
+                        <div class="panel-body">
+                          <p>
+                            <button id="btn_email_consent" class="btn btn-primary">Geef toestemming voor advertenties per email</button>
+                          </p>
+                          <p id="email_consent_result_status"></p>
+                          <p>
+                            Hierbij wordt u gevraagd om AVG-achtige
+                            toestemming te geven om u advertenties toe
+                            te sturen. Het attribuut waarmee u
+                            ondertekent is het email adres waarop u
+                            deze advertenties wil ontvangen. Verder
+                            worden met deze ondertekening geen
+                            gegevens van u onthuld. In principe zouden
+                            er nog meer attributen van u toegevoegd
+                            kunnen worden (zoals geslacht,
+                            geboortedatum etc.) zodat de advertenties
+                            beter afgestemd kunnen worden.
+                          </p>
+                          <p>
+                            Deze verlening van toestemming via een
+                            digitale handtekening geeft een perfecte
+                            manier om toestemming onder de Algemene
+                            Verordening Gegevensbescherming (AVG) vast
+                            te leggen. Deze toestemming in de vorm van
+                            een digitale handtekening kan aan andere
+                            (partner)bedrijven doorgegeven worden en
+                            geeft hen zekerheid, omdat ze de
+                            handtekening zelf kunnen controleren. Ook
+                            kan hiermee aan de AVG-toezichthouder,
+                            desgevraagd, aangetoond worden dat er
+                            daadwerkelijk toestemming gegeven is door
+                            de eigenaar van het email adres.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div id="donation" class="tab-pane panel panel-default">
+                        <div class="panel-body">
+                          <p>
+                            <button id="btn_donation" class="btn btn-primary">Doneer aan de stichting Privacy by Design</button>
+                          </p>
+                          <div id="donation_result_status"></div>
+                          <p>
+                            Hierbij wordt u gevraagd te ondertekenen
+                            dat u een financiële bijdrage zult leveren
+                            aan de stichting (niet echt). U
+                            ondertekent hierbij met uw achternaam en
+                            met uw mobiele telefoonnummer attributen.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div id="exam" class="tab-pane panel panel-default">
+                        <div class="panel-body">
+                          <p>
+                            <button id="btn_exam" class="btn btn-primary">Verklaring tentamen gehaald</button>
+                          </p>
+                          <div id="exam_result_status"></div>
+                          <p>
+                            Hierbij wordt u gevraagd om als docent te
+                            ondertekenen dat een bepaalde student
+                            geslaagd is voor uw tentamen. U
+                            ondertekent hierbij met een drietal SURF
+                            attributen, namelijk uw naam, de
+                            (educatieve) instelling waar u werkzaam
+                            bent, en met uw email adres bij die
+                            instelling. Een mogelijkheid is om deze
+                            functionaliteit te integreren met het veel
+                            gebruikte administratie
+                            systeem <a href="https://caci.nl/nl/osiris">Osiris</a>,
+                            zodat docenten geen natte handtekeningen
+                            meer hoeven te zetten op lijsten met
+                            tentamencijfers.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p>
+                      Attribuut-gebaseerde digitale handtekeningen
+                      bieden veel nieuwe mogelijkheden: een
+                      politiebeambte kan bijv. een proces verbaal
+                      ondertekenen met zijn/haar naam en
+                      politie-registratienummer, als IRMA attributen;
+                      daarmee wordt de integreteit en authenticiteit
+                      van dit proces verbaal in de hele verdere
+                      justiti&euml;le keten gegarandeerd. Ook kan een
+                      arts een medische verklaring met de
+                      eigen <a href="https://privacybydesign.foundation/uitgifte-big/">BIG-registratie</a>
+                      gegevens als IRMA attributen ondertekenen, zodat
+                      iedereen kan controleren dat deze verklaring
+                      daadwerkelijk door een arts (en ook welke)
+                      getekend is. Binnen organisaties kunnen allerlei
+                      beslissingen met digitale handtekeningen
+                      betrouwbaar en controleerbaar vastgelegd
+                      worden. IRMA is het enige
+                      <em>identity platform</em> dat dergelijke
+                      ge&iuml;ntegreerde authenticatie en
+                      ondertekening biedt.
+                    </p>
+                    <p>
+                      <a href="https://privacybydesign.foundation/demo/">Terug</a> naar
+                      het IRMA demo overzicht.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

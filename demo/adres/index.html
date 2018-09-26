@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Adres verificatie demo</title>
+        <meta value="https://privacybydesign.foundation/tomcat/irma_api_server/server/" name="irma-web-server">
+	<!-- foundation's server -->
+        <meta value="https://privacybydesign.foundation/tomcat/irma_api_server/api/v2/" name="irma-api-server">
+	<!-- demo server -->
+        <!-- <meta value="https://demo.irmacard.org/tomcat/irma_api_server/api/v2/" name="irma-api-server"> -->
+        <link rel="stylesheet" href="https://privacybydesign.foundation/tomcat/irma_api_server/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+
+        <script src="https://privacybydesign.foundation/tomcat/irma_api_server/bower_components/jquery/dist/jquery.js" defer></script>
+        <script src="https://privacybydesign.foundation/tomcat/irma_api_server/client/irma.js" defer></script>
+	<script type="text/javascript"
+		src="https://privacybydesign.foundation/tomcat/irma_api_server/bower_components/jwt-decode/build/jwt-decode.js"></script>
+        <script src="adresdemo.js" defer></script>
+
+<style>
+table, th, td {
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+</style>
+
+    </head>
+    <body>
+
+<div class="col-xs-10 col-md-6 col-xs-offset-1 col-md-offset-3" id="main">
+<h1>Demo: adres opgave met IRMA</h1>
+
+<div id="result_status"></div>
+
+<p>
+Deze pagina beschrijft hoe een webbezoeker eenvoudig zijn/haar adres
+door kan geven met IRMA. Hierbij wordt een adres formulier automatisch
+ingevuld, met betrouwbare informatie. 
+</p>
+
+<p>
+Om de onderstaande knoppen te kunnen uitproberen moet de bezoeker de
+IRMA
+app <a href="https://privacybydesign.foundation/download/">ge&iuml;nstalleerd</a>
+hebben en daarin <b>adres</b> attributen geladen hebben. Dat kan via
+de <a href="https://privacybydesign.foundation/uitgifte/idin/">iDIN
+uitgifte webpagina</a> van de stichting Privacy by Design.
+</p>
+
+
+<center style="margin: 2em">
+<table style="width:60%">
+  <tr>
+    <td> <b>Adres</b> </td>
+    <td> <input id="adres_regel" disabled> </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td> <b>Postcode</b> </td>
+    <td> <input id = "postcode_regel" disabled> </td>
+    <td><button class="btn btn-primary" id="try_irma_adresbtn">Vul in met IRMA</button></td>
+  </tr>
+  <tr>
+    <td> <b>Plaats</b> </td>
+    <td> <input id="plaats_regel" disabled> </td>
+    <td></td>
+  </tr>
+</table>
+</center>
+
+<p>
+Een paar opmerkingen:
+<ul>
+<li> Deze demo vult enkel de bovenstaande adres velden in, maar
+slaat <em>geen</em> gegevens op. Zodra de pagina gesloten wordt,
+zijn de gegevens verdwenen.
+
+<li> Dit automatische invullen met IRMA werkt natuurlijk ook voor
+andere velden, zoals naam, email adres, telefoon nummer etc. Dit is
+veel makkelijker dan het handmatig invullen en voorkomt fouten. De
+website kan er bovendien van uitgaan dat de adres attributen van de
+bezoeker zelf zijn en kan ook zien uit welke bron de attributen komen
+en daarmee de betrouwbaarheid bepalen. Hier is iDIN de bron: de
+adresgegevens komen van de bank van de bezoeker van de webpagina.
+
+<li> Een concreet voorbeeld waar zulke betrouwbare adresgegevens
+nuttig zouden kunnen zijn is bij energiemaatschappijen. Daar kan/kon
+online met adresgegevens het energiegebruik van een woning ingezien
+worden.  Wanneer adressen niet uit betrouwbare bron komen, geeft dit
+makkelijk aanleiding tot
+een <a href="https://www.nu.nl/internet/4989794/energieverbruik-alle-nederlandse-huishoudens-was-in-zien-datalek.html">datalek</a>. Zulke
+datalekken moeten gemeld worden bij de Autoriteit Persoonsgegevens,
+tasten de reputatie van de betreffende maatschappij aan, en kunnen
+leiden tot hoge boetes onder de Algemene Verordening
+Gegevensbescherming (AVG).
+</ul>
+</p>
+
+
+<p>
+<a href="https://privacybydesign.foundation/demo/">Terug</a> naar
+het IRMA demo overzicht.
+</p>
+
+</div>
+
+</body>
+</html>

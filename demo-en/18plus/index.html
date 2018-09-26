@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>18+ IRMA demo</title>
+        <meta value="https://privacybydesign.foundation/tomcat/irma_api_server/server/" name="irma-web-server">
+        <meta value="https://privacybydesign.foundation/tomcat/irma_api_server/api/v2/" name="irma-api-server">
+
+        <link rel="stylesheet" href="https://privacybydesign.foundation/tomcat/irma_api_server/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+
+        <script src="https://privacybydesign.foundation/tomcat/irma_api_server/bower_components/jquery/dist/jquery.js" defer></script>
+        <script src="https://privacybydesign.foundation/tomcat/irma_api_server/client/irma.js" defer></script>
+        <script src="18plusdemo.js" defer></script>
+    </head>
+    <body>
+
+<div class="col-xs-10 col-md-6 col-xs-offset-1 col-md-offset-3" id="main">
+<h1>Demo: age verification with IRMA</h1>
+
+<div id="result_status"></div>
+
+<p>
+This page contains an example of a simple age check with IRMA,
+together with an explanation of how this works and can be used, for
+instance by webshops or video sites. With the button below it can be
+checked whether a visitor of such a site is indeed older than
+18. What's special about IRMA is its privacy-friendliness: the visitor
+reveals no other information than the fact that (s)he is 18+. For this
+property "older than 18" there is a special IRMA attribute; only the
+yes/no information in that attribute is revealed to the requesting
+webpage.
+</p>
+
+<p>
+In order to be able to try out yourself the button below you need to
+have the IRMA
+app <a href="https://privacybydesign.foundation/download-en/">installed</a>
+with at least the <b>older than 18</b> attribute loaded.  This can be
+done
+via <a href="https://privacybydesign.foundation/issuance/idin/">iDIN
+issuance webpage</a> of the Privacy by Design foundation. A succesful
+check that the visitor is older than 18 gives subsequent access to
+material that is only suitable for an 18+ audience.
+</p>
+
+<center style="margin: 2em">
+    <button class="btn btn-primary" id="try_irma_18btn">Older than 18 check</button>
+</center>
+
+<p>
+A few remarks:
+<ul>
+<li> A similar button can be used for other age checks, like "older
+than 12", "older than 16", or even "older than 65". These attributes
+can be collected in principle by anyone with a Dutch bank account,
+via <a href="https://privacybydesign.foundation/issuance/idin/">iDIN</a>.
+The software for checking these attributes, as used here, is open
+source, freely available, and can be used without costs, see also
+the <a href="https://privacybydesign.foundation/irma-verifier/">webpage</a>
+of the foundation with more information on this.
+
+<li> Buttons like the above one are especially relevant for webshops
+that have a legal obligation to perform age verification when offering
+violent or possibly offensive games or films, or by gambling
+sites. The button could also be used to regulate online access to
+catch up TV programs. Currently, many of these sites do not have
+proper age checks because there is no user-friendly (and cheap)
+technology available. With IRMA this excuse can no longer be used.
+
+<li> With IRMA it is possible to verify not only "older than" but also
+"younger than" attributes, such as "younger than 16" or "younger than
+12". Such attributes can be used to restrict access to certain
+webpages or chat sites to minors --- and to exclude others, in
+principle. So far, these "younger than" attribute are not issued by
+the foundation, on the one side because no specific application has
+emerged, and on the other side because it is unclear from which age
+onwards one can reasonably expect children to use the IRMA app.
+</ul>
+</p>
+
+<p>
+<a href="https://privacybydesign.foundation/demo-en/">Back</a> to
+the IRMA demo overview.
+</p>
+
+</div>
+
+</body>
+</html>
